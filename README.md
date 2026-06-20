@@ -1,27 +1,38 @@
 # CRM Software Layer
 
-Structured CRM capability layer for AnarchI Technologies.
+Consent-aware CRM cadence primitives for AnarchI Technologies.
 
 Hardcoding freedom into the systems of tomorrow.
 
 ## Purpose
 
-This repo explores CRM workflow primitives that can support sales, relationship tracking, follow-up cadence, and customer intelligence without turning the system into a black box.
+CRM Software Layer provides deterministic relationship cadence controls. It helps decide when to engage, wait, stop, or route to operator review without exposing private contact data or encouraging noisy automation.
 
-## Current Component
+## What Changed
+
+- Replaced the thin fatigue heartbeat file with a tested CRM cadence package.
+- Added explicit opt-out handling.
+- Added conservative cooldown behavior for unanswered outbound messages.
+- Added human review routing for high-value context.
+
+## Structure
 
 ```text
-CRM Software Layer/
-└── fatigue_heartbeat.py
+.
+|-- crm_software_layer/
+|   |-- __init__.py
+|   `-- cadence.py
+|-- tests/
+|   `-- test_cadence.py
+`-- README.md
 ```
 
-## Scope
+## Verify
 
-- Relationship cadence and fatigue signals.
-- Follow-up timing and workflow state.
-- Structured handoffs between operator and automation.
-- Future integration with presentation-safe analytics.
+```bash
+python -m unittest discover -s tests -q
+```
 
-## Production Direction
+## Public Safety
 
-The next step is to define CRM entities, fixtures, and deterministic tests before adding external integrations. Live customer data and private contact records should remain outside this public repository.
+Do not commit contact lists, private messages, customer records, credentials, live CRM exports, or automated outreach flows that bypass consent and review.
