@@ -14,6 +14,7 @@ CRM Software Layer provides deterministic relationship cadence controls. It help
 - Added explicit opt-out handling.
 - Added conservative cooldown behavior for unanswered outbound messages.
 - Added human review routing for high-value context.
+- Added deterministic account plans with priority, next action, review flag, and value band.
 
 ## Structure
 
@@ -21,6 +22,7 @@ CRM Software Layer provides deterministic relationship cadence controls. It help
 .
 |-- crm_software_layer/
 |   |-- __init__.py
+|   |-- account_plan.py
 |   `-- cadence.py
 |-- tests/
 |   `-- test_cadence.py
